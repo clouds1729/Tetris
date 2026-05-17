@@ -60,6 +60,9 @@ GitHub Actions builds on Ubuntu using `cmake`, `g++`, and `libsfml-dev` from `ap
 ```
 
 > The game expects `images/` to be beside the executable. The CMake build copies this folder automatically after build.
+## Image
+
+<img width="983" height="1521" alt="image" src="https://github.com/user-attachments/assets/ef402fed-72a5-44ba-b386-5db92bed11a4" />
 
 ## Controls
 
