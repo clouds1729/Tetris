@@ -1,54 +1,67 @@
 # SFML Tetris Game
 
-This project is a simple implementation of the classic Tetris game using SFML (Simple and Fast Multimedia Library) in C++.
+A small C++/SFML implementation of classic Tetris. This repository is intentionally compact and is a good base for incremental gameplay improvements.
 
 ## Features
 
-- Classic Tetris gameplay
-- Simple graphics using SFML
-- Keyboard controls for movement and rotation
+- Falling tetrominoes with left/right movement
+- Piece rotation (`Up` arrow)
+- Soft drop (`Down` arrow)
+- Line clearing
+- Lightweight sprite-based rendering (`images/` assets)
+
+## Dependencies
+
+- C++17-compatible compiler (GCC/Clang/MSVC)
+- [CMake](https://cmake.org/) 3.16+
+- [SFML](https://www.sfml-dev.org/) 2.5+ (graphics, window, system)
+
+### Linux (example)
+
+```bash
+sudo apt update
+sudo apt install -y build-essential cmake libsfml-dev
+```
+
+## Clone
+
+```bash
+git clone https://github.com/<your-username>/Tetris.git
+cd Tetris
+```
+
+## Build
+
+```bash
+cmake -S . -B build
+cmake --build build
+```
+
+## Run
+
+```bash
+./build/tetris
+```
+
+> The game expects `images/` to be beside the executable. The CMake build copies this folder automatically after build.
 
 ## Controls
 
-- Arrow Up: Rotate the tetromino
-- Arrow Left: Move the tetromino left
-- Arrow Right: Move the tetromino right
-- Arrow Down: Increase the drop speed
+- `↑` Rotate piece
+- `←` Move left
+- `→` Move right
+- `↓` Soft drop (faster fall while held)
+- Close window to quit
 
-## Requirements
+## Known Limitations
 
-- SFML library
-- CMake
-
-## Building the Project
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-username/sfml-tetris.git
-    cd sfml-tetris
-    ```
-
-2. Create a build directory:
-    ```bash
-    mkdir build
-    cd build
-    ```
-
-3. Run CMake to configure the project:
-    ```bash
-    cmake ..
-    ```
-
-4. Build the project:
-    ```bash
-    cmake --build .
-    ```
-
-5. Run the executable:
-    ```bash
-    ./SFMLTetris
-    ```
+- No score or level progression yet
+- No next-piece preview or hold mechanic
+- No hard drop
+- No game-over screen/reset flow
+- No pause/restart hotkeys
+- Random piece generation is purely `rand()` based (not 7-bag)
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
