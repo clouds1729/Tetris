@@ -23,6 +23,18 @@ sudo apt update
 sudo apt install -y build-essential cmake libsfml-dev
 ```
 
+### Windows (PowerShell + vcpkg)
+
+```powershell
+git clone https://github.com/microsoft/vcpkg $env:USERPROFILE\vcpkg
+& $env:USERPROFILE\vcpkg\bootstrap-vcpkg.bat
+
+cmake -S . -B build `
+  -DCMAKE_TOOLCHAIN_FILE=$env:USERPROFILE\vcpkg\scripts\buildsystems\vcpkg.cmake `
+  -DVCPKG_TARGET_TRIPLET=x64-windows
+cmake --build build --config Release
+```
+
 ## Clone
 
 ```bash

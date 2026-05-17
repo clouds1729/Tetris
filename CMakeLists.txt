@@ -12,8 +12,8 @@ target_compile_options(tetris PRIVATE
     $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra -Wpedantic>
 )
 
-find_package(SFML 2.5 REQUIRED COMPONENTS graphics window system)
-target_link_libraries(tetris PRIVATE sfml-graphics sfml-window sfml-system)
+find_package(SFML CONFIG REQUIRED COMPONENTS Graphics Window System)
+target_link_libraries(tetris PRIVATE SFML::Graphics SFML::Window SFML::System)
 
 add_custom_command(TARGET tetris POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
