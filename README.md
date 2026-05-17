@@ -45,9 +45,13 @@ cd Tetris
 ## Build
 
 ```bash
-cmake -S . -B build
-cmake --build build
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release
 ```
+
+## Continuous Integration
+
+GitHub Actions builds on Ubuntu using `cmake`, `g++`, and `libsfml-dev` from `apt` to keep CI simple and reliable.
 
 ## Run
 
